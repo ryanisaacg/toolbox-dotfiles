@@ -9,12 +9,23 @@ import os
 special = { 'init.nvim': '~/.config/nvim/init.vim' }
 ignore = ['.git', 'init.py']
 
-for file in os.listdir('.'):
-    if file in ignore:
+#Ensure compatibility between Python 2 and 3
+if raw_input:
+    input = raw_input
+
+for config in os.listdir('.'):
+    if config in ignore:
         continue
-    if file in special.keys():
-        dest = special[file]
+    if config in special.keys():
+        dest = special[config]
     else:
-        dest = '~/.{}'.format(file)
+        dest = '~/.{}'.format(config)
     dest = os.path.expanduser(dest)
-    os.symlink(os.path.abspath(file), os.path.abspath(dest))
+    config = os.path.abspath(config)
+    dest = os.path.abspath(dest)
+    if os.path.exists(dest):
+        if input("Configuration destination {} for configuration {} already exists. Overwrite? (Y/N) ".format(dest, config)) == 'Y':
+            os.remove(dest)
+        else:
+            continue
+    os.symlink(config, dest)
