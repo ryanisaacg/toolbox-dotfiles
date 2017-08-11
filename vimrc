@@ -6,6 +6,7 @@ let mapleader=","
 set bg=dark
 set number "Line numbers
 syntax on "Syntax highlighting
+colorscheme onedark
 
 "Tabs
 "Each indent should be 4 space characters
@@ -29,6 +30,7 @@ set noswapfile
 
 "Plugins
 call plug#begin('~/.vim/plugged')
+Plug 'joshdick/onedark.vim'
 Plug 'leafgarland/typescript-vim'
 Plug 'rust-lang/rust.vim'
 Plug 'mattn/webapi-vim'
