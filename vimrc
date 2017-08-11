@@ -6,7 +6,6 @@ let mapleader=","
 set bg=dark
 set number "Line numbers
 syntax on "Syntax highlighting
-colorscheme onedark
 
 "Tabs
 "Each indent should be 4 space characters
@@ -33,3 +32,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 call plug#end()
+
+"Set up the colorscheme
+colorscheme onedark
