@@ -73,6 +73,10 @@ if command_exists xmodmap ; then
 fi
 alias xclm="sudo ~/bin/xclm"
 
+if [ ! -f "$HOME/antigen.zsh" ]; then
+    curl -L git.io/antigen > "$HOME/antigen.zsh"
+fi
+
 # Load the Anitgen package manager
 source ~/antigen.zsh
 antigen bundle git
