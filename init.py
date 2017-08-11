@@ -10,11 +10,11 @@ special = { 'init.nvim': '~/.config/nvim/init.vim' }
 ignore = ['.git', 'init.py']
 
 for file in os.listdir('.'):
-	if file in ignore:
-		continue
-	if file in special.keys():
-		dest = special[file]
-	else:
-		dest = '~/.{}'.format(file)
-	dest = os.path.expanduser(dest)
-	os.symlink(os.path.abspath(file), os.path.abspath(dest))
+    if file in ignore:
+        continue
+    if file in special.keys():
+        dest = special[file]
+    else:
+        dest = '~/.{}'.format(file)
+    dest = os.path.expanduser(dest)
+    os.symlink(os.path.abspath(file), os.path.abspath(dest))
