@@ -31,12 +31,5 @@ set noswapfile
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'rust-lang/rust.vim'
-Plug 'mattn/webapi-vim'
-Plug 'jdonaldson/vaxe'
-Plug 'cespare/vim-toml'
-Plug 'tikhomirov/vim-glsl'
-Plug 'othree/html5.vim'
-Plug 'fatih/vim-go'
+Plug 'sheerun/vim-polyglot'
 call plug#end()
