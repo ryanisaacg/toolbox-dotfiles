@@ -31,7 +31,17 @@ set noswapfile
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 "Set up the colorscheme
 colorscheme onedark
+let g:airline_theme='onedark'
+
+"Configure the statusline to show syntax errors
+let g:airline#extensions#ale#enabled = 1
+
+"Add keybinds to jump to errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
