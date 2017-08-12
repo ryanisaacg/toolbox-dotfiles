@@ -87,4 +87,4 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 antigen apply
 
-SPACESHIP_PROMPT_SYMBOL="➜ "
+SPACESHIP_PROMPT_SYMBOL="λ"
