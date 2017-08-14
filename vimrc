@@ -40,7 +40,6 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mxw/vim-jsx'
 Plug 'kien/ctrlp.vim'
-Plug 'bling/vim-bufferline'
 call plug#end()
 
 "Set up the colorscheme
@@ -49,6 +48,9 @@ let g:airline_theme='onedark'
 
 "Configure the statusline to show syntax errors
 let g:airline#extensions#ale#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#buffer_idx_mode = 1
 
 "Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
