@@ -27,6 +27,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+"Turn on flow support
+let g:javascript_plugin_flow = 1
+
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
@@ -35,6 +38,9 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'isRuslan/pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 "Set up the colorscheme
