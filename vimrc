@@ -33,6 +33,8 @@ Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 "Set up the colorscheme
