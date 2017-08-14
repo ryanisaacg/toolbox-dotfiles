@@ -38,7 +38,6 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'isRuslan/pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
 Plug 'kien/ctrlp.vim'
 call plug#end()
