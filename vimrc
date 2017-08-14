@@ -34,7 +34,7 @@ let g:javascript_plugin_flow = 1
 call plug#begin('~/.vim/plugged')
 Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -48,9 +48,12 @@ let g:airline_theme='onedark'
 
 "Configure the statusline to show syntax errors
 let g:airline#extensions#ale#enabled = 1
+
+"Set up buffers to act more like tabs in other editors
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_buffers = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1
+set hidden
 
 "Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
