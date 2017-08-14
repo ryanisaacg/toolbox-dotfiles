@@ -27,6 +27,9 @@ set nobackup
 set nowritebackup
 set noswapfile
 
+"Allow each project to set its own vimrc
+set exrc
+
 "Turn on flow support
 let g:javascript_plugin_flow = 1
 
@@ -58,3 +61,4 @@ set hidden
 "Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
