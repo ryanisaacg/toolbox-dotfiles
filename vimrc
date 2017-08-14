@@ -40,6 +40,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mxw/vim-jsx'
 Plug 'kien/ctrlp.vim'
+Plug 'bling/vim-bufferline'
 call plug#end()
 
 "Set up the colorscheme
