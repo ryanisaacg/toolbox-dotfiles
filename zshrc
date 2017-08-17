@@ -68,9 +68,6 @@ fi
 if command_exists xboxdrv ; then
 	alias controller-enable="sudo xboxdrv --detach-kernel-driver --led 2"
 fi
-if command_exists xmodmap ; then
-	xmodmap "$HOME/.speedswapper"
-fi
 alias xclm="sudo ~/bin/xclm"
 
 if [ ! -f "$HOME/antigen.zsh" ]; then
