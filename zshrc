@@ -84,6 +84,8 @@ antigen use oh-my-zsh
 antigen bundle git
 antigen bundle command-not-found
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-completions
 antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 antigen apply
 
