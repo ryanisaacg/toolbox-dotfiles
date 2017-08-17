@@ -43,6 +43,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'mxw/vim-jsx'
 Plug 'kien/ctrlp.vim'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Set up the colorscheme
