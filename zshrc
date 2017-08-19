@@ -87,3 +87,5 @@ antigen theme https://github.com/denysdovhan/spaceship-zsh-theme spaceship
 antigen apply
 
 SPACESHIP_PROMPT_SYMBOL="λ"
+
+export GIT_EDITOR=vim
