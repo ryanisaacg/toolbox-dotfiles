@@ -10,8 +10,10 @@ special = { 'init.nvim': '~/.config/nvim/init.vim' }
 ignore = ['.git', 'init.py']
 
 #Ensure compatibility between Python 2 and 3
-if raw_input:
+try:
     input = raw_input
+except:
+    pass
 
 for config in os.listdir('.'):
     if config in ignore:
