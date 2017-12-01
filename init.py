@@ -18,6 +18,8 @@ except NameError:
 if os.name == 'nt':
     import shutil
     os.symlink = shutil.copy
+except:
+    pass
 
 for config in os.listdir('.'):
     if config in ignore:

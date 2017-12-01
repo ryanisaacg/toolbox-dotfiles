@@ -1,6 +1,6 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
-
+export GOPATH=$HOME/go
+export PATH=$HOME/bin:$HOME/go/bin:/usr/local/bin:$PATH
 # Uncomment the following line to use case-sensitive completion.
 CASE_SENSITIVE="true"
 
