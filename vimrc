@@ -47,7 +47,10 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Set up the colorscheme
-colorscheme onedark
+if !has('win32')
+    colorscheme onedark
+endif
+
 let g:airline_theme='onedark'
 
 "Configure the statusline to show syntax errors

@@ -12,8 +12,12 @@ ignore = ['.git', 'init.py']
 #Ensure compatibility between Python 2 and 3
 try:
     input = raw_input
-except:
+except NameError:
     pass
+
+if os.name == 'nt':
+    import shutil
+    os.symlink = shutil.copy
 
 for config in os.listdir('.'):
     if config in ignore:
@@ -22,12 +26,12 @@ for config in os.listdir('.'):
         dest = special[config]
     else:
         dest = '~/.{}'.format(config)
-    dest = os.path.expanduser(dest)
-    config = os.path.abspath(config)
-    dest = os.path.abspath(dest)
-    if os.path.exists(dest):
-        if input("Configuration destination {} for configuration {} already exists. Overwrite? (Y/N) ".format(dest, config)) == 'Y':
-            os.remove(dest)
-        else:
-            continue
-    os.symlink(config, dest)
+        dest = os.path.expanduser(dest)
+        config = os.path.abspath(config)
+        dest = os.path.abspath(dest)
+        if os.path.exists(dest):
+            if input("Configuration destination {} for configuration {} already exists. Overwrite? (Y/N) ".format(dest, config)) == 'Y':
+                os.remove(dest)
+            else:
+                continue
+        os.symlink(config, dest)
