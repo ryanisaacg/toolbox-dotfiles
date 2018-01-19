@@ -18,16 +18,28 @@ set_bash_prompt() {
 
     RESET='\e[m'
 
-    USER="$YELLOW\u$RESET"
-    HOST="$LIGHTGRAY\h$RESET"
+    local DIRECTORY
+    local DIRECTORY_PREFIX
+    local HOST
+    local USER
+
     DIRECTORY="$CYAN\w$RESET"
-    local PROMPT
+    if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+        USER="$LIGHTGRAY\u$RESET"
+        HOST=" at $YELLOW\h$RESET"
+        DIRECTORY_PREFIX=" in "
+    fi
+    if [ "$EUID" -eq 0 ]; then 
+        USER="$RED\u$RESET"
+        DIRECTORY_PREFIX=" in "
+    fi
     if [ $EXIT_STATUS == 0 ]; then 
         PROMPT="$GREENλ$RESET"
     else
         PROMPT="$REDλ$RESET"
     fi
-    PS1="$USER at $HOST in $DIRECTORY \n$PROMPT "
+    DIRECTORY="$DIRECTORY_PREFIX$DIRECTORY"
+    PS1="\n$USER$HOST$DIRECTORY \n$PROMPT "
 }
 PROMPT_COMMAND=set_bash_prompt
 
