@@ -1,5 +1,6 @@
 set_bash_prompt() {
-    EXIT_STATUS=$?
+    EXIT_STATUS=$? #Get the result of the previous command to color the lambda
+    #Color constants
     RED='\033[00;31m'
     GREEN='\033[00;32m'
     YELLOW='\033[00;33m'
@@ -18,26 +19,33 @@ set_bash_prompt() {
 
     RESET='\e[m'
 
+    # Variables for the prompt
     local DIRECTORY
     local DIRECTORY_PREFIX
     local HOST
     local USER
 
+    #The current directory in Cyan color
     DIRECTORY="$CYAN\w$RESET"
+    #If running over SSH, include username and hostname
     if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
         USER="$LIGHTGRAY\u$RESET"
         HOST=" at $YELLOW\h$RESET"
         DIRECTORY_PREFIX=" in "
     fi
+    #If root, the username should be in red
     if [ "$EUID" -eq 0 ]; then 
         USER="$RED\u$RESET"
         DIRECTORY_PREFIX=" in "
     fi
+    #If the previous command failed, the lambda should be red
     if [ $EXIT_STATUS == 0 ]; then 
         PROMPT="$GREENλ$RESET"
     else
         PROMPT="$REDλ$RESET"
     fi
+    #($user (at $host)? in)? $directory
+    #$prompt 
     DIRECTORY="$DIRECTORY_PREFIX$DIRECTORY"
     PS1="\n$USER$HOST$DIRECTORY \n$PROMPT "
 }
