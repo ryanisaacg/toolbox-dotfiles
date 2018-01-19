@@ -19,7 +19,7 @@ __set_prompt() {
     RESET='\e[m'
 
     __git_info() { 
-        readonly SYMBOL_GIT_BRANCH='⑂'
+        readonly SYMBOL_GIT_BRANCH=''
         readonly SYMBOL_GIT_MODIFIED='?'
         readonly SYMBOL_GIT_PUSH='↑'
         readonly SYMBOL_GIT_PULL='↓'
@@ -52,9 +52,12 @@ __set_prompt() {
                 break
             fi
         done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
+        if [[ -n "$marks" ]]; then 
+            marks="[$marks]"
+        fi
 
         # print the git branch segment without a trailing newline
-        printf " on $PURPLE$ref [$marks]$RESET"
+        printf " on $PURPLE$ref $marks$RESET"
     }
 
     set_bash_prompt() {
