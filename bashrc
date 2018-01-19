@@ -50,5 +50,7 @@ set_bash_prompt() {
     PS1="\n$USER$HOST$DIRECTORY \n$PROMPT "
 }
 PROMPT_COMMAND=set_bash_prompt
-
-
+export EDITOR='vim'
+if command_exists xboxdrv ; then
+    alias controller-enable="sudo xboxdrv --detach-kernel-driver --led 2"
+fi
