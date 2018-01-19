@@ -47,9 +47,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Set up the colorscheme
-if !has('win32')
-    colorscheme onedark
-endif
+colorscheme onedark
 
 let g:airline_theme='onedark'
 
