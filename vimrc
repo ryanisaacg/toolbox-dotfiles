@@ -18,6 +18,7 @@ filetype plugin indent on
 
 "Useful flair
 set showmatch "Show matching parens and brackets
+set cul
 
 "Mouse
 set mouse=a
@@ -48,7 +49,6 @@ call plug#end()
 
 "Set up the colorscheme
 colorscheme onedark
-
 let g:airline_theme='onedark'
 
 "Configure the statusline to show syntax errors
