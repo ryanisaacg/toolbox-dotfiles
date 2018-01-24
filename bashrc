@@ -32,7 +32,7 @@ __set_prompt() {
 
         if [[ -n "$ref" ]]; then
             # prepend branch symbol
-            ref=$SYMBOL_GIT_BRANCH$ref
+            ref="$SYMBOL_GIT_BRANCH $ref"
         else
             # get tag name or short unique hash
             ref=$($git_eng describe --tags --always 2>/dev/null)
