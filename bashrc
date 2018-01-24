@@ -101,6 +101,7 @@ __set_prompt() {
 __set_prompt
 
 export EDITOR='vim'
+export PATH="$HOME/.cargo/bin:$PATH"
 
 command_exists () {
     type "$1" &> /dev/null ;
