@@ -19,7 +19,7 @@ __set_prompt() {
     RESET='\e[m'
 
     __git_info() { 
-        readonly SYMBOL_GIT_BRANCH=''
+        readonly SYMBOL_GIT_BRANCH=''
         readonly SYMBOL_GIT_MODIFIED='?'
         readonly SYMBOL_GIT_PUSH='↑'
         readonly SYMBOL_GIT_PULL='↓'
