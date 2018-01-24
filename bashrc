@@ -57,7 +57,7 @@ __set_prompt() {
         fi
 
         # print the git branch segment without a trailing newline
-        printf " on $PURPLE$ref $marks$RESET"
+        printf " on \033[00;35m$ref $marks\e[m"
     }
 
     set_bash_prompt() {
