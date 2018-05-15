@@ -19,6 +19,7 @@ filetype plugin indent on
 "Useful flair
 set showmatch "Show matching parens and brackets
 set cul
+set nowrap
 
 "Mouse
 set mouse=a
