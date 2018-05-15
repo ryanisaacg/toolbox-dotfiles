@@ -36,7 +36,7 @@ let g:javascript_plugin_flow = 1
 
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'joshdick/onedark.vim'
+Plug 'ryanisaacg/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
