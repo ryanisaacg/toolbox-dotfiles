@@ -99,4 +99,6 @@ __set_prompt() {
     PROMPT_COMMAND=set_bash_prompt
 }
 __set_prompt
-
+set_title() {
+    echo -en "\033]0;${1}\a"
+}
