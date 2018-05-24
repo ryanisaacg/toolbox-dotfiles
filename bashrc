@@ -1,5 +1,6 @@
 #Color constants
-__set_prompt() { 
+__set_prompt() {
+    BLACK='\[\033[00;30m\]'
     RED='\[\033[00;31m\]'
     GREEN='\[\033[00;32m\]'
     YELLOW='\[\033[00;33m\]'
@@ -8,6 +9,7 @@ __set_prompt() {
     CYAN='\[\033[00;36m\]'
     LIGHTGRAY='\[\033[00;37m\]'
 
+    LBLACK='\[\033[01;30m\]'
     LRED='\[\033[01;31m\]'
     LGREEN='\[\033[01;32m\]'
     LYELLOW='\[\033[01;33m\]'
@@ -18,11 +20,13 @@ __set_prompt() {
 
     RESET='\[\e[m\]'
 
+    local GIT
+
     __git_info() { 
-        readonly SYMBOL_GIT_BRANCH=''
-        readonly SYMBOL_GIT_MODIFIED='?'
-        readonly SYMBOL_GIT_PUSH='↑'
-        readonly SYMBOL_GIT_PULL='↓'
+        SYMBOL_GIT_BRANCH=''
+        SYMBOL_GIT_MODIFIED='?'
+        SYMBOL_GIT_PUSH='↑'
+        SYMBOL_GIT_PULL='↓'
         [[ $POWERLINE_GIT = 0 ]] && return # disabled
         hash git 2>/dev/null || return # git not found
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
@@ -57,7 +61,7 @@ __set_prompt() {
         fi
 
         # print the git branch segment without a trailing newline
-        printf " on \033[00;35m$ref $marks\e[m"
+        GIT=" on $PURPLE$ref $marks$RESET"
     }
 
     set_bash_prompt() {
@@ -92,8 +96,7 @@ __set_prompt() {
         #($user (at $host)? in)? $directory
         #$prompt 
         DIRECTORY="$DIRECTORY_PREFIX$DIRECTORY"
-        __powerline_git_info="$(__git_info)"
-        local GIT="\${__powerline_git_info}"
+        __git_info
         PS1="\n$USER$HOST$DIRECTORY$GIT\n$PROMPT "
     }
     PROMPT_COMMAND=set_bash_prompt
@@ -102,3 +105,10 @@ __set_prompt
 set_title() {
     echo -en "\033]0;${1}\a"
 }
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
