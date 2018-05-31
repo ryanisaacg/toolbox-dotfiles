@@ -42,7 +42,11 @@ __set_prompt() {
             ref=$($git_eng describe --tags --always 2>/dev/null)
         fi
 
-        [[ -n "$ref" ]] || return  # not a git repo
+        # exit if this is not a git repo
+        if [[ -n "$ref" ]]; then
+            GIT=""
+            return 
+        fi
 
         local marks
 
