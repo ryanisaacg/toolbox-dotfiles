@@ -43,7 +43,7 @@ __set_prompt() {
         fi
 
         # exit if this is not a git repo
-        if [[ -n "$ref" ]]; then
+        if [[ -z "$ref" ]]; then
             GIT=""
             return 
         fi
