@@ -37,7 +37,7 @@ let g:javascript_plugin_flow = 1
 
 "Plugins
 call plug#begin('~/.vim/plugged')
-Plug 'ryanisaacg/onedark.vim'
+Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
@@ -49,6 +49,7 @@ Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Set up the colorscheme
+let g:onedark_termcolors=16
 colorscheme onedark
 let g:airline_theme='onedark'
 
