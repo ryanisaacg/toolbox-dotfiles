@@ -24,9 +24,9 @@ __set_prompt() {
 
     __git_info() { 
         SYMBOL_GIT_MODIFIED='?'
+        SYMBOL_GIT_STASHED='$'
         SYMBOL_GIT_PUSH='↑'
         SYMBOL_GIT_PULL='↓'
-        [[ $POWERLINE_GIT = 0 ]] && return # disabled
         hash git 2>/dev/null || return # git not found
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
 
@@ -59,6 +59,11 @@ __set_prompt() {
                 break
             fi
         done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
+
+        if [[ -n $(${git_eng} stash list 2>/dev/null) ]]; then
+            marks="${marks}${SYMBOL_GIT_STASHED}"
+        fi
+
         if [[ -n "$marks" ]]; then 
             marks="[$marks]"
         fi
