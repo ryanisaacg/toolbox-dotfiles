@@ -41,7 +41,6 @@ call plug#end()
 
 "Set up the colorscheme
 let g:onedark_termcolors=16
-colorscheme onedark
 
 set hidden
 
