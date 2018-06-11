@@ -61,6 +61,9 @@ let g:airline#extensions#tabline#buffer_nr_show = 1
 set hidden
 
 "Add keybinds to jump to errors
+" Keybinds
+nmap <silent> <ESC>t :FZF<CR>
+" Jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
