@@ -7,7 +7,7 @@ set bg=dark
 set number "Line numbers
 syntax on "Syntax highlighting
 
-"Tabs
+"Tabs 
 "Each indent should be 4 space characters
 set tabstop=4 "Make each tab 4 spaces
 set shiftwidth=4 "Make sure auto-tabbing only indents 4 spaces
@@ -31,33 +31,18 @@ set noswapfile
 "Allow each project to set its own vimrc
 set exrc
 
-"Turn on flow support
-let g:javascript_plugin_flow = 1
-
 "Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
-Plug 'vim-airline/vim-airline'
-Plug 'scrooloose/nerdtree'
-Plug 'mxw/vim-jsx'
 Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 "Set up the colorscheme
 let g:onedark_termcolors=16
 colorscheme onedark
-let g:airline_theme='onedark'
 
-"Configure the statusline to show syntax errors
-let g:airline#extensions#ale#enabled = 1
-
-"Set up buffers to act more like tabs in other editors
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1
 set hidden
 
 "Add keybinds to jump to errors
