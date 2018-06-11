@@ -20,60 +20,49 @@ __set_prompt() {
 
     RESET='\[\e[m\]'
 
-    local GIT
+    SYMBOL_GIT_MODIFIED='?'
+    SYMBOL_GIT_STASHED='$'
+    SYMBOL_GIT_PUSH='↑'
+    SYMBOL_GIT_PULL='↓'
 
-    __git_info() { 
-        SYMBOL_GIT_MODIFIED='?'
-        SYMBOL_GIT_STASHED='$'
-        SYMBOL_GIT_PUSH='↑'
-        SYMBOL_GIT_PULL='↓'
+    set_bash_prompt() {
+        EXIT_STATUS=$? #Get the result of the previous command to color the lambda
+        
         hash git 2>/dev/null || return # git not found
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
 
         # get current branch name
         local ref=$($git_eng symbolic-ref --short HEAD 2>/dev/null)
 
-        if [[ -n "$ref" ]]; then
-            # prepend branch symbol
-            ref="${SYMBOL_GIT_BRANCH}${ref}"
-        else
-            # get tag name or short unique hash
-            ref=$($git_eng describe --tags --always 2>/dev/null)
-        fi
-
+        local GIT
         # exit if this is not a git repo
         if [[ -z "$ref" ]]; then
             GIT=""
-            return 
-        fi
+        else
+            local marks
+            # scan first two lines of output from `git status`
+            while IFS= read -r line; do
+                if [[ $line =~ ^## ]]; then # header line
+                    [[ $line =~ ahead\ ([0-9]+) ]] && marks+="$SYMBOL_GIT_PUSH"
+                    [[ $line =~ behind\ ([0-9]+) ]] && marks+="$SYMBOL_GIT_PULL"
+                else # branch is modified if output contains more lines after the header line
+                    marks="$SYMBOL_GIT_MODIFIED$marks"
+                    break
+                fi
+            done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
 
-        local marks
-
-        # scan first two lines of output from `git status`
-        while IFS= read -r line; do
-            if [[ $line =~ ^## ]]; then # header line
-                [[ $line =~ ahead\ ([0-9]+) ]] && marks+="$SYMBOL_GIT_PUSH"
-                [[ $line =~ behind\ ([0-9]+) ]] && marks+="$SYMBOL_GIT_PULL"
-            else # branch is modified if output contains more lines after the header line
-                marks="$SYMBOL_GIT_MODIFIED$marks"
-                break
+            # check to see if the user has any stashed changes
+            if [[ -n $(${git_eng} stash list 2>/dev/null) ]]; then
+                marks="${marks}${SYMBOL_GIT_STASHED}"
             fi
-        done < <($git_eng status --porcelain --branch 2>/dev/null)  # note the space between the two <
 
-        if [[ -n $(${git_eng} stash list 2>/dev/null) ]]; then
-            marks="${marks}${SYMBOL_GIT_STASHED}"
+            if [[ -n "$marks" ]]; then 
+                marks="[$marks]"
+            fi
+
+            # print the git branch segment without a trailing newline
+            GIT=" on $PURPLE$ref $marks$RESET"
         fi
-
-        if [[ -n "$marks" ]]; then 
-            marks="[$marks]"
-        fi
-
-        # print the git branch segment without a trailing newline
-        GIT=" on $PURPLE$ref $marks$RESET"
-    }
-
-    set_bash_prompt() {
-        EXIT_STATUS=$? #Get the result of the previous command to color the lambda
 
         # Variables for the prompt
         local DIRECTORY
@@ -104,7 +93,6 @@ __set_prompt() {
         #($user (at $host)? in)? $directory
         #$prompt 
         DIRECTORY="$DIRECTORY_PREFIX$DIRECTORY"
-        __git_info
         PS1="\n$USER$HOST$DIRECTORY$GIT\n$PROMPT "
     }
     PROMPT_COMMAND=set_bash_prompt
