@@ -19,6 +19,7 @@ filetype plugin indent on
 "Useful flair
 set showmatch "Show matching parens and brackets
 set nowrap
+set hlsearch
 
 "Mouse
 set mouse=a
@@ -51,10 +52,13 @@ let g:buftabline_separators=1
 let g:buftabline_indicators=1
 
 " Keybinds
+" Fuzzy finder
 nmap <silent> <ESC>t :FZF<CR>
-" Jump to errors
+" Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Clear highlighting
+nmap <silent> <ESC>c :nohl<CR>
 
 " Configure syntax highlighting
 let &t_ZH="\e[3m"
