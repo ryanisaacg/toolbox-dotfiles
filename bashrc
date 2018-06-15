@@ -86,7 +86,7 @@ __set_prompt() {
         fi
         #If the previous command failed, the lambda should be red
         if [ $EXIT_STATUS == 0 ]; then 
-            PROMPT="$GREEN$PROMPT"
+            PROMPT="$LGREEN$PROMPT"
         else
             PROMPT="$RED$PROMPT"
         fi
