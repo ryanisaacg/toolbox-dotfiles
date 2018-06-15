@@ -56,3 +56,16 @@ nmap <silent> <ESC>t :FZF<CR>
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
+" Configure syntax highlighting
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+highlight StatusLine ctermfg=white cterm=bold
+highlight Comment ctermfg=LightGreen cterm=italic
+highlight BufTabLineCurrent ctermbg=NONE ctermfg=white
+highlight BufTabLineActive ctermbg=NONE ctermfg=blue
+highlight BufTabLineHidden ctermbg=NONE ctermfg=magenta
+highlight BufTabLineFill ctermbg=NONE
+
+" Configure the statusline
+set laststatus=2
+set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
