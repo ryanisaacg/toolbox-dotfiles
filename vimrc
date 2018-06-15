@@ -37,6 +37,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
+Plug 'ap/vim-buftabline'
 call plug#end()
 
 "Set up the colorscheme
@@ -44,7 +45,11 @@ let g:onedark_termcolors=16
 
 set hidden
 
-"Add keybinds to jump to errors
+" Configure the buftabline
+let g:buftabline_numbers=1
+let g:buftabline_separators=1
+let g:buftabline_indicators=1
+
 " Keybinds
 nmap <silent> <ESC>t :FZF<CR>
 " Jump to errors
