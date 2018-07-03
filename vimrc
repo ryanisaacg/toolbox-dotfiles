@@ -39,6 +39,8 @@ Plug 'sheerun/vim-polyglot'
 Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
+Plug 'tpope/vim-rsi'
+Plug 'jiangmiao/auto-pairs'
 call plug#end()
 
 "Set up the colorscheme
