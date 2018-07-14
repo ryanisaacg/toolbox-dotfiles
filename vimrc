@@ -40,13 +40,14 @@ Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'ap/vim-buftabline'
 Plug 'tpope/vim-rsi'
-Plug 'jiangmiao/auto-pairs'
+Plug 'cohama/lexima.vim'
 call plug#end()
 
 "Set up the colorscheme
 let g:onedark_termcolors=16
 
 set hidden
+
 
 " Configure the buftabline
 let g:buftabline_numbers=1
