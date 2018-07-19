@@ -3,3 +3,5 @@
 # Please adapt and uncomment the following lines:
 	name = Ryan Goldstein
 	email = ryanisaacg@gmail.com
+[push]
+	default = current
