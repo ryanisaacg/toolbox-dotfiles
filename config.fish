@@ -13,3 +13,4 @@ set fish_color_git      magenta
 set fish_color_success  brgreen
 set fish_color_failure  red
 
+alias src=source ~/.config/fish/config.fish
