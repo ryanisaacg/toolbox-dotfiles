@@ -5,11 +5,13 @@
 # By default a '.' is prepended and the file is put in the home directory
 # If a file should be ignored edit the 'ignore' list
 import os
+import sys
 
 special = { \
     'init.nvim': '~/.config/nvim/init.vim',
     'config.fish': '~/.config/fish/config.fish',
-    'fish_prompt.fish': '~/.config/fish/functions/fish_prompt.fish'
+    'fish_prompt.fish': '~/.config/fish/functions/fish_prompt.fish',
+    'git-switch': '~/bin/git-switch'
 }
 ignore = ['.git', 'init.py', 'colors.itermcolors']
 
@@ -28,7 +30,10 @@ def find_dest(src):
     dest = special[src] if src in special.keys() else '~/.' + src
     return os.path.expanduser(dest)
 
-sources = [src for src in os.listdir('.') if not src in ignore]
+if len(sys.argv) > 1:
+    sources = sys.argv[1:]
+else:
+    sources = [src for src in os.listdir('.') if not src in ignore]
 destinations = [find_dest(src) for src in sources]
 absolute = [(os.path.abspath(src), os.path.abspath(dest)) for (src, dest) in zip(sources, destinations)]
 
