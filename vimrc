@@ -69,6 +69,9 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Clear highlighting
 nmap <silent> <ESC>c :nohl<CR>
+" Buffer-based tab switching
+nmap <silent> gt :bn<CR>
+nmap <silent> gT :bp<CR>
 
 " Configure syntax highlighting
 let &t_ZH="\e[3m"
