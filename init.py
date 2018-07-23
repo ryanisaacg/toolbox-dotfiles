@@ -11,7 +11,8 @@ special = { \
     'init.nvim': '~/.config/nvim/init.vim',
     'config.fish': '~/.config/fish/config.fish',
     'fish_prompt.fish': '~/.config/fish/functions/fish_prompt.fish',
-    'git-switch': '~/bin/git-switch'
+    'git-switch': '~/bin/git-switch',
+    'git-sprout': '~/bin/git-sprout'
 }
 ignore = ['.git', 'init.py', 'colors.itermcolors']
 

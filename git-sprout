@@ -1,0 +1,8 @@
+#!/usr/bin/env fish
+# vim: set syntax=fish:
+
+set branch $argv[1]
+
+git branch -c $branch
+git switch $branch
+git push -u origin $branch
