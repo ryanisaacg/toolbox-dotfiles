@@ -4,4 +4,6 @@
 	name = Ryan Goldstein
 	email = ryanisaacg@gmail.com
 [push]
-	default = current
+    default = current
+[alias]
+    ff = merge --ff-only
