@@ -1,0 +1,21 @@
+#!/usr/bin/env fish
+# vim: set syntax=fish:
+
+set lines (string split "\n" (git status --porcelain))
+for line in $lines
+    set val (string split " " (string trim $line))
+    set prefix $val[1]
+    set file $val[2]
+    if [ "$prefix" = "M" ]
+        set_color yellow
+        printf "Modified: \t"
+    else if [ "$prefix" = "D" ]
+        set_color red
+        printf "Deleted: \t"
+    else if [ "$prefix" = "??" ]
+        set_color green
+        printf "Created: \t"
+    end
+    printf "$file\n"
+end
+set_color normal

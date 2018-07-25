@@ -12,7 +12,8 @@ special = { \
     'config.fish': '~/.config/fish/config.fish',
     'fish_prompt.fish': '~/.config/fish/functions/fish_prompt.fish',
     'git-switch': '~/bin/git-switch',
-    'git-sprout': '~/bin/git-sprout'
+    'git-sprout': '~/bin/git-sprout',
+    'git-state': '~/bin/git-state'
 }
 ignore = ['.git', 'init.py', 'colors.itermcolors']
 
