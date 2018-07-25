@@ -18,8 +18,22 @@ filetype plugin indent on
 
 "Useful flair
 set showmatch "Show matching parens and brackets
-set nowrap
 set hlsearch
+
+"Text wrapping
+set wrap
+set linebreak
+set nolist  " list disables linebreak
+set textwidth=0
+set wrapmargin=0
+noremap  <buffer> <silent> k gk
+noremap  <buffer> <silent> j gj
+noremap  <buffer> <silent> 0 g0
+noremap  <buffer> <silent> $ g$
+noremap  <buffer> <silent> <Up> gk
+noremap  <buffer> <silent> <Down> gj
+noremap  <buffer> <silent> <Home> g0
+noremap  <buffer> <silent> <End> g$
 
 "Mouse
 set mouse=a
