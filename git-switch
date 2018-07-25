@@ -10,3 +10,4 @@ set target_stash (git stash list | grep "$target-wip" | awk -F: '{print $1}')
 if [ -n "$target_stash" ]
     git stash pop $target_stash
 end
+git ff
