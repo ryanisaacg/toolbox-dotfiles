@@ -87,6 +87,7 @@ nmap <silent> <ESC>c :nohl<CR>
 " Buffer-based tab switching
 nmap <silent> gt :bn<CR>
 nmap <silent> gT :bp<CR>
+nmap gb :b 
 
 " Configure syntax highlighting
 let &t_ZH="\e[3m"
