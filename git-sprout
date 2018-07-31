@@ -5,4 +5,4 @@ set branch $argv[1]
 
 git branch -c $branch
 git switch $branch
-git push -u origin $branch
+git push -u origin $branch --no-verify
