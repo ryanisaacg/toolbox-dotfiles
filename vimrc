@@ -6,6 +6,7 @@ let mapleader=","
 set bg=dark
 set number "Line numbers
 syntax on "Syntax highlighting
+set clipboard^=unnamed
 
 "Tabs 
 "Each indent should be 4 space characters
