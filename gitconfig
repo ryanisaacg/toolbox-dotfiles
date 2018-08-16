@@ -5,5 +5,7 @@
 	email = ryanisaacg@gmail.com
 [alias]
     ff = merge --ff-only
-    down = !git fetch && git ff
+    down = !git fetch --prune && git ff
     up = push
+[core]
+	excludesfile = /Users/ryangoldstein/.gitignore_global
