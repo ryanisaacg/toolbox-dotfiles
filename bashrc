@@ -111,4 +111,3 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-alias src=source ~/.bashrc
