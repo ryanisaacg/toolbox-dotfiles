@@ -99,6 +99,9 @@ highlight BufTabLineCurrent ctermbg=NONE ctermfg=white
 highlight BufTabLineActive ctermbg=NONE ctermfg=blue
 highlight BufTabLineHidden ctermbg=NONE ctermfg=magenta
 highlight BufTabLineFill ctermbg=NONE
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
 
 " Configure the statusline
 set laststatus=2
