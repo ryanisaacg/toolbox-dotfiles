@@ -88,7 +88,7 @@ nmap <silent> <ESC>c :nohl<CR>
 " Buffer-based tab switching
 nmap <silent> gt :bn<CR>
 nmap <silent> gT :bp<CR>
-nmap gb :b 
+nmap gb :b
 
 " Configure syntax highlighting
 let &t_ZH="\e[3m"
@@ -98,7 +98,6 @@ highlight Comment ctermfg=LightGreen cterm=italic
 highlight BufTabLineCurrent ctermbg=NONE ctermfg=white
 highlight BufTabLineActive ctermbg=NONE ctermfg=blue
 highlight BufTabLineHidden ctermbg=NONE ctermfg=magenta
-highlight BufTabLineFill ctermbg=NONE
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
