@@ -1,8 +1,6 @@
-rvm default
-
 test -s /Users/ryangoldstein/.nvm-fish/nvm.fish; and source /Users/ryangoldstein/.nvm-fish/nvm.fish
 
-set PATH ~/Library/Python/3.7/bin ~/bin $PATH
+set PATH ~/bin ~/.cargo/bin $PATH
 
 # Colors
 
