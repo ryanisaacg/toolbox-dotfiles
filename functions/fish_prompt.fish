@@ -1,3 +1,10 @@
+set fish_color_uname    red
+set fish_color_hostname yellow
+set fish_color_cwd      cyan
+set fish_color_git      magenta
+set fish_color_success  brgreen
+set fish_color_failure  red
+
 # Fish git prompt
 set __fish_git_prompt_showdirtystate 'yes'
 set __fish_git_prompt_showstashstate 'yes'
