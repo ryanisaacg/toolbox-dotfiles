@@ -2,8 +2,8 @@
 set backspace=2 "Make backspaces do what they do for any other editor
 let mapleader=","
 
-"Necessary flair
-set bg=dark
+"Some basic utilities
+set bg=light
 set number "Line numbers
 syntax on "Syntax highlighting
 set clipboard^=unnamed
