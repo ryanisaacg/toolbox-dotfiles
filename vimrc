@@ -6,9 +6,14 @@ let mapleader=","
 set bg=light
 set number "Line numbers
 syntax on "Syntax highlighting
-set clipboard^=unnamed
+set clipboard^=unnamed "Use the system clipboard
+set mouse=a "Read mouse events
+set showmatch "Show matching parens and brackets
+set hlsearch "Highlight matching items in a search
+set incsearch "Incrementally search: auto-jump to the first match while a search is being typed
+set hidden "Buffers should stay alive, even if not visible
 
-"Tabs 
+"Tabs
 "Each indent should be 4 space characters
 set tabstop=4 "Make each tab 4 spaces
 set shiftwidth=4 "Make sure auto-tabbing only indents 4 spaces
@@ -16,10 +21,6 @@ set autoindent
 set expandtab
 set smarttab
 filetype plugin indent on
-
-"Useful flair
-set showmatch "Show matching parens and brackets
-set hlsearch
 
 "Text wrapping
 set wrap
@@ -37,13 +38,8 @@ noremap  <buffer> <silent> <Down> gj
 noremap  <buffer> <silent> <Home> g0
 noremap  <buffer> <silent> <End> g$
 
-"Mouse
-set mouse=a
-
 "Disable backups completely
-set nobackup
-set nowritebackup
-set noswapfile
+set nobackup nowritebackup noswapfile
 
 "Allow each project to set its own vimrc
 set exrc
