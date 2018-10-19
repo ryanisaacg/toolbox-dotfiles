@@ -54,8 +54,6 @@ endif
 "Install the plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'sheerun/vim-polyglot'
-Plug 'w0rp/ale'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-rsi'
 Plug 'cohama/lexima.vim'
@@ -71,6 +69,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <ESC>c :nohl<CR>
 " Display list of buffers
 nmap <silent> s :buffers<CR>:b 
+" Switch between the last 2 buffers
+nmap <silent> S :b#<CR>
 
 "Configure syntax highlighting
 let &t_ZH="\e[3m"
