@@ -3,3 +3,5 @@ ln -s (pwd)/gitconfig ~/.gitconfig
 ln -s (pwd)/gitignore_global ~/.gitignore_global
 ln -s (pwd)/vimrc ~/.config/nvim/init.vim
 set -U fish_user_paths $fish_user_paths ~/.config/dotfiles/bin ~/.cargo/bin
+alias vim=nvim
+funcsave vim
