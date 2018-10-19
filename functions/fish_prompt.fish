@@ -21,6 +21,11 @@ set __fish_git_prompt_char_upstream_diverged ' ↑↓'
 set __fish_git_prompt_char_upstream_ahead ' ↑'
 set __fish_git_prompt_char_upstream_behind ' ↓'
 
+function prompt_hostname
+    # return the short hostname only by default (#4804)
+    string replace -r "\..*" "" (hostname)
+end
+
 function fish_prompt
   set last_status $status
 
