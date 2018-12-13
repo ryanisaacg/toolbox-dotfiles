@@ -57,6 +57,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy f
 Plug 'airblade/vim-gitgutter' " Show git diff lines
 Plug 'tpope/vim-rsi' " Add the readline keys to Github
 Plug 'tpope/vim-fugitive' " Git wrapper for Vim
+Plug 'tpope/vim-dispatch' " Background tasks for Vim
 Plug 'cohama/lexima.vim' " Paren matching for vim
 call plug#end()
 
