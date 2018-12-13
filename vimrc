@@ -11,6 +11,7 @@ set showmatch "Show matching parens and brackets
 set hlsearch "Highlight matching items in a search
 set incsearch "Incrementally search: auto-jump to the first match while a search is being typed
 set hidden "Buffers should stay alive, even if not visible
+set showcmd
 
 "Tabs
 "Each indent should be 4 space characters
