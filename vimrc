@@ -87,6 +87,6 @@ set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\
 set guicursor=
 
 " Custom functions
-function StripTrailing()
+function! StripTrailing()
     :%s/ \+$//g
 endfunction
