@@ -61,18 +61,17 @@ Plug 'cohama/lexima.vim' " Paren matching for vim
 call plug#end()
 
 " Keybinds
-let mapleader=","
 " Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 " Fuzzy finder
-nmap <silent> <leader>t :FZF<CR>
+nmap <silent> t :FZF<CR>
 " Clear highlighting
-nmap <silent> <leader>c :nohl<CR>
+nmap <silent> c :nohl<CR>
 " Display list of buffers
-nmap <silent> <leader>s :buffers<CR>:b 
+nmap <silent> s :buffers<CR>:b 
 " Switch between the last 2 buffers
-nmap <silent> <leader>S :b#<CR>
+nmap <silent> S :b#<CR>
 
 "Configure syntax highlighting
 let &t_ZH="\e[3m"
