@@ -1,6 +1,5 @@
 "Basic Vim Behavior
 set backspace=2 "Make backspaces do what they do for any other editor
-let mapleader=","
 
 "Some basic utilities
 set bg=light
@@ -60,17 +59,18 @@ Plug 'cohama/lexima.vim'
 call plug#end()
 
 " Keybinds
-" Fuzzy finder
-nmap <silent> <ESC>t :FZF<CR>
+let mapleader=","
 " Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" Fuzzy finder
+nmap <silent> <leader>t :FZF<CR>
 " Clear highlighting
-nmap <silent> <ESC>c :nohl<CR>
+nmap <silent> <leader>c :nohl<CR>
 " Display list of buffers
-nmap <silent> s :buffers<CR>:b 
+nmap <silent> <leader>s :buffers<CR>:b 
 " Switch between the last 2 buffers
-nmap <silent> S :b#<CR>
+nmap <silent> <leader>S :b#<CR>
 
 "Configure syntax highlighting
 let &t_ZH="\e[3m"
