@@ -53,10 +53,11 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 "Install the plugins
 call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'airblade/vim-gitgutter'
-Plug 'tpope/vim-rsi'
-Plug 'cohama/lexima.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
+Plug 'airblade/vim-gitgutter' " Show git diff lines
+Plug 'tpope/vim-rsi' " Add the readline keys to Github
+Plug 'tpope/vim-fugitive' " Git wrapper for Vim
+Plug 'cohama/lexima.vim' " Paren matching for vim
 call plug#end()
 
 " Keybinds
