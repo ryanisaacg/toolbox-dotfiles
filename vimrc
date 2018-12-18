@@ -1,10 +1,25 @@
-"Basic Vim Behavior
-set backspace=2 "Make backspaces do what they do for any other editor
+"Plugins
+"Install the plugin manager
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
+"Install the plugins
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
+Plug 'airblade/vim-gitgutter' " Show git diff lines
+Plug 'tpope/vim-rsi' " Add the readline keys to Github
+Plug 'tpope/vim-fugitive' " Git wrapper for Vim
+Plug 'tpope/vim-dispatch' " Background tasks for Vim
+Plug 'tpope/vim-sensible' " Some nice defaults for Vim
+Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
+Plug 'cohama/lexima.vim' " Paren matching for vim
+call plug#end()
 
 "Some basic utilities
 set bg=light
 set number "Line numbers
-syntax on "Syntax highlighting
 set clipboard^=unnamed "Use the system clipboard
 set mouse=a "Read mouse events
 set showmatch "Show matching parens and brackets
@@ -13,6 +28,7 @@ set incsearch "Incrementally search: auto-jump to the first match while a search
 set hidden "Buffers should stay alive, even if not visible
 set showcmd
 
+" Use ripgrep for the :grep command
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
 
 "Tabs
@@ -46,23 +62,6 @@ set nobackup nowritebackup noswapfile
 "Allow each project to set its own vimrc
 set exrc
 
-"Plugins
-"Install the plugin manager
-if empty(glob('~/.vim/autoload/plug.vim'))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-"Install the plugins
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
-Plug 'airblade/vim-gitgutter' " Show git diff lines
-Plug 'tpope/vim-rsi' " Add the readline keys to Github
-Plug 'tpope/vim-fugitive' " Git wrapper for Vim
-Plug 'tpope/vim-dispatch' " Background tasks for Vim
-Plug 'cohama/lexima.vim' " Paren matching for vim
-call plug#end()
-
 " Keybinds
 " Add keybinds to jump to errors
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
@@ -86,7 +85,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 
 " Configure the statusline
-set laststatus=2
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
 set guicursor=
 highlight StatusLine ctermbg=black
@@ -95,3 +93,5 @@ highlight StatusLine ctermbg=black
 function! StripTrailing()
     :%s/ \+$//g
 endfunction
+
+let g:is_posix=1
