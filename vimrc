@@ -94,5 +94,7 @@ highlight StatusLine ctermbg=black
 " Custom commands
 " Strip tailing whitespace from files
 command! StripTrailing :%s/ \+$//g
+" Custom Vim branch switching command
+command! -nargs=1 Gswitch :Dispatch git switch '<args>'
 
 let g:is_posix=1
