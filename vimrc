@@ -74,6 +74,8 @@ nmap <silent> c :nohl<CR>
 nmap <silent> s :buffers<CR>:b 
 " Switch between the last 2 buffers
 nmap <silent> S :b#<CR>
+" Execute the currently focused command from 'dispatch.vim'
+nmap <silent> Q :Dispatch<CR>
 
 "Configure syntax highlighting
 let &t_ZH="\e[3m"
