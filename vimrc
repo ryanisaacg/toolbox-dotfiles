@@ -91,9 +91,8 @@ set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\
 set guicursor=
 highlight StatusLine ctermbg=black
 
-" Custom functions
-function! StripTrailing()
-    :%s/ \+$//g
-endfunction
+" Custom commands
+" Strip tailing whitespace from files
+command! StripTrailing :%s/ \+$//g
 
 let g:is_posix=1
