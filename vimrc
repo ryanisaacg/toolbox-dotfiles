@@ -87,6 +87,7 @@ match ExtraWhitespace /\s\+$/
 set laststatus=2
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
 set guicursor=
+highlight StatusLine ctermbg=black
 
 " Custom functions
 function! StripTrailing()
