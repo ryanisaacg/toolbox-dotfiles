@@ -13,6 +13,8 @@ set incsearch "Incrementally search: auto-jump to the first match while a search
 set hidden "Buffers should stay alive, even if not visible
 set showcmd
 
+set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
+
 "Tabs
 "Each indent should be 4 space characters
 set tabstop=4 "Make each tab 4 spaces
