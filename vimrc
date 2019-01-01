@@ -15,6 +15,8 @@ Plug 'tpope/vim-dispatch' " Background tasks for Vim
 Plug 'tpope/vim-sensible' " Some nice defaults for Vim
 Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
 Plug 'cohama/lexima.vim' " Paren matching for vim
+Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
+Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 call plug#end()
 
 "Some basic utilities
