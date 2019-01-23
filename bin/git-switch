@@ -4,7 +4,7 @@
 set target $argv[1]
 
 set current (git rev-parse --abbrev-ref HEAD)
-git stash save -u "$current-wip"
+git stash save -k -u "$current-wip"
 git checkout $target
 set target_stash (git stash list | grep "$target-wip" | awk -F: '{print $1}')
 if [ -n "$target_stash" ]
