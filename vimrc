@@ -100,4 +100,5 @@ command! StripTrailing :%s/ \+$//g
 " Custom Vim branch switching command
 command! -nargs=1 Gswitch :Dispatch git switch '<args>'
 
+" Don't highlight POSIX sh features as errors
 let g:is_posix=1
