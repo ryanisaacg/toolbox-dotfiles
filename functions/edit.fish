@@ -1,6 +1,6 @@
 function edit
-    # Check if there is already a running nvim instance
-    set jobline (jobs | grep 'nvim' -m 1)
+    # Check if there is already a running vim instance
+    set jobline (jobs | grep 'vim' -m 1)
     # Get the job index from the job line
     set job (string match -r '\W+\w*' $jobline)
     if [ "$job" ]
