@@ -14,3 +14,5 @@
     stashes = stash list
 [core]
 	excludesfile = /Users/ryangoldstein/.gitignore_global
+[merge]
+	defaultToUpstream = true
