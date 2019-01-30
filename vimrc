@@ -1,12 +1,13 @@
+set runtimepath=~/.config/dotfiles/vim,$VIM,$VIMRUNTIME
 "Plugins
 "Install the plugin manager
-if empty(glob('~/.vim/autoload/plug.vim'))
+if empty(glob("~/.config/dotfiles/vim/autoload/plug.vim"))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 "Install the plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/dotfiles/vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
 Plug 'airblade/vim-gitgutter' " Show git diff lines
 Plug 'tpope/vim-rsi' " Add the readline keys to Github
