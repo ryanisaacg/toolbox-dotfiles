@@ -13,6 +13,6 @@
     remotes = remote -v
     stashes = stash list
 [core]
-	excludesfile = /Users/ryangoldstein/.gitignore_global
+	excludesfile = ~/.config/dotfiles/.gitignore_global
 [merge]
 	defaultToUpstream = true
