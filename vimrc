@@ -102,3 +102,6 @@ command! -nargs=1 Gswitch :Dispatch git switch '<args>'
 
 " Don't highlight POSIX sh features as errors
 let g:is_posix=1
+
+" Leave Vim screen on scrollback instead of clearing it
+command! Persist :set t_ti= t_te=
