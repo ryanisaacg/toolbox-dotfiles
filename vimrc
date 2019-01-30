@@ -29,6 +29,7 @@ set hlsearch "Highlight matching items in a search
 set incsearch "Incrementally search: auto-jump to the first match while a search is being typed
 set hidden "Buffers should stay alive, even if not visible
 set showcmd
+set autoread "Reload files automatically when they're changed outside vim
 
 " Use ripgrep for the :grep command
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
