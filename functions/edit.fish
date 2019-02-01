@@ -8,6 +8,6 @@ function edit
         fg "$job"
     else
         # Launch a new editor instance
-        nvim
+        vim
     end
 end
