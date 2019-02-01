@@ -75,7 +75,7 @@ nmap <silent> t :FZF<CR>
 " Clear highlighting
 nmap <silent> c :nohl<CR>
 " Display list of buffers
-nmap <silent> s :buffers<CR>:b 
+nmap <silent> s :buffers<CR>:b
 " Switch between the last 2 buffers
 nmap <silent> S :b#<CR>
 " Execute the currently focused command from 'dispatch.vim'
