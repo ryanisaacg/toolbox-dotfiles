@@ -1,8 +1,7 @@
-set fish_color_uname    red
-set fish_color_hostname yellow
+set fish_color_ssh      yellow
 set fish_color_cwd      cyan
 set fish_color_git      magenta
-set fish_color_success  brgreen
+set fish_color_success  green
 set fish_color_failure  red
 
 # Fish git prompt
@@ -21,51 +20,37 @@ set __fish_git_prompt_char_upstream_diverged ' ↑↓'
 set __fish_git_prompt_char_upstream_ahead ' ↑'
 set __fish_git_prompt_char_upstream_behind ' ↓'
 
-function prompt_hostname
-    # return the short hostname only by default (#4804)
-    string replace -r "\..*" "" (hostname)
+function prompt_section
+    set_color $argv[1]
+    printf '%s' $argv[2]
+    set_color normal
 end
 
 function fish_prompt
-  set last_status $status
+    set last_status $status
 
-  echo
-  set -U fish_prompt_pwd_dir_length 0
+    echo
 
-  set_color $fish_color_uname
-  printf '%s' (whoami)
-  set_color normal
+    # Line 1
+    prompt_section $fish_color_cwd (prompt_pwd)
 
-  if set -q SSH_CLIENT; or set -q SSH_TTY
-    printf ' at ' 
+    set git (__fish_git_prompt ' ')
+    if test -n "$git"
+        printf ' on'
+        prompt_section $fish_color_git $git
+        else
+        printf ' '
+    end
 
-    set_color $fish_color_hostname
-    echo -n (prompt_hostname)
-    set_color normal
-  end
+    if set -q SSH_CLIENT; or set -q SSH_TTY
+        printf 'as'
+        set name (whoami)
+        set host (string replace -r "\..*" "" (hostname))
+        prompt_section $fish_color_ssh " $name@$host"
+    end
 
-  printf ' in '
-  
-  set_color $fish_color_cwd
-  printf '%s' (prompt_pwd)
-  set_color normal
-
-  set git (__fish_git_prompt ' ')
-
-  if test -n "$git"
-    printf ' on'
-    set_color magenta
-    printf '%s' $git
-    set_color normal
-  end
-
-  # Line 2
-  echo
-  if [ $last_status -eq 0 ]
-      set_color $fish_color_success
-  else
-      set_color $fish_color_failure
-  end
-  printf 'λ '
-  set_color normal
+    # Line 2
+    echo
+    [ $last_status -eq 0 ]; and set col $fish_color_success; or set col $fish_color_failure
+    prompt_section $col '❯ '
 end
