@@ -81,19 +81,10 @@ nmap <silent> S :b#<CR>
 " Execute the currently focused command from 'dispatch.vim'
 nmap <silent> Q :Dispatch<CR>
 
-"Configure syntax highlighting
-let &t_ZH="\e[3m"
-let &t_ZR="\e[23m"
-highlight StatusLine ctermfg=white cterm=bold
-highlight Comment cterm=italic gui=italic
-"Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
-
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
 set guicursor=
-highlight StatusLine ctermbg=black
+hi StatusLine ctermbg=black
 
 " Custom commands
 " Strip tailing whitespace from files
@@ -106,3 +97,13 @@ let g:is_posix=1
 
 " Leave Vim screen on scrollback instead of clearing it
 command! Persist :set t_ti= t_te=
+
+" Configure syntax highlighting
+" Enable italics
+let &t_ZH="\e[3m"
+let &t_ZR="\e[23m"
+" Load the color scheme
+source ~/.config/dotfiles/tempus_day.vim
+" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
