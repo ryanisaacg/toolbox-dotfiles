@@ -17,7 +17,7 @@ Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, 
 Plug 'cohama/lexima.vim' " Paren matching for vim
 Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'christoomey/vim-tmux-navigator' " Vim + Tmux integration
-Plug 'w0rp/ale' " Erorr highlighting / linting while editing
+"Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 call plug#end()
 
 "Some basic utilities
@@ -31,6 +31,8 @@ set incsearch "Incrementally search: auto-jump to the first match while a search
 set hidden "Buffers should stay alive, even if not visible
 set showcmd
 set autoread "Reload files automatically when they're changed outside vim
+set splitbelow "Open a split below the current split
+set splitright "Open a split to the right of the current split
 
 " Use ripgrep for the :grep command
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
@@ -103,7 +105,7 @@ command! Persist :set t_ti= t_te=
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 " Load the color scheme
-source ~/.config/dotfiles/tempus_day.vim
+source ~/.config/dotfiles/vim/tempus_day.vim
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
