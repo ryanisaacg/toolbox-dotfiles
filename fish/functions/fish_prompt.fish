@@ -42,13 +42,6 @@ function fish_prompt
         printf ' '
     end
 
-    if set -q SSH_CLIENT; or set -q SSH_TTY
-        printf 'as'
-        set name (whoami)
-        set host (string replace -r "\..*" "" (hostname))
-        prompt_section $fish_color_ssh " $name@$host"
-    end
-
     # Line 2
     echo
     [ $last_status -eq 0 ]; and set col $fish_color_success; or set col $fish_color_failure
