@@ -21,7 +21,7 @@ Plug 'christoomey/vim-tmux-navigator' " Vim + Tmux integration
 call plug#end()
 
 "Some basic utilities
-set bg=light
+set bg=dark
 set number "Line numbers
 set clipboard^=unnamed "Use the system clipboard
 set mouse=a "Read mouse events
