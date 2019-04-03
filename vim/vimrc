@@ -90,7 +90,7 @@ hi StatusLine ctermbg=black
 
 " Custom commands
 " Strip tailing whitespace from files
-command! StripTrailing :%s/ \+$//g
+command! StripTrailing :silent! %s/\s\+$//g|''
 " Custom Vim branch switching command
 command! -nargs=1 Gswitch :Dispatch git switch '<args>'
 
@@ -104,8 +104,7 @@ command! Persist :set t_ti= t_te=
 " Enable italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-" Load the color scheme
-" source ~/.config/dotfiles/vim/tempus_day.vim
-" Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
-match ExtraWhitespace /\s\+$/
+
+" Auto-run commands
+" Strip whitespace before saving
+autocmd BufWritePre * :StripTrailing
