@@ -107,3 +107,5 @@ let &t_ZR="\e[23m"
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=black
+autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
