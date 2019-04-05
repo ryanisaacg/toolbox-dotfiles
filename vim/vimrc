@@ -104,8 +104,6 @@ command! Persist :set t_ti= t_te=
 " Enable italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
-" Load the color scheme
-" source ~/.config/dotfiles/vim/tempus_day.vim
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
