@@ -1,5 +1,7 @@
 # Don't check in the Vim plugins
 vim/plugged
+# Don't check in the netrwhist file
+vim/.netrwhist
 # Don't check in the Fish local files
 fish/fishd.*
 fish/fish_variables
