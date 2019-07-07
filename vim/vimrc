@@ -92,7 +92,14 @@ hi StatusLine ctermbg=black
 
 " Custom commands
 " Strip tailing whitespace from files
-command! StripTrailing :%s/ \+$//g
+function! StripTrailingWhitespace()
+  let l = line(".")
+  let c = col(".")
+  %s/\s\+$//e
+  call cursor(l, c)
+endfunction
+command! StripTrailing :call StripTrailingWhitespace()
+au BufWritePre <buffer> :call StripTrailingWhitespace()
 " Custom Vim branch switching command
 command! -nargs=1 Gswitch :Dispatch git switch '<args>'
 
