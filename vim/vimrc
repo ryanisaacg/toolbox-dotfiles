@@ -17,7 +17,8 @@ Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, 
 Plug 'cohama/lexima.vim' " Paren matching for vim
 Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'christoomey/vim-tmux-navigator' " Vim + Tmux integration
-"Plug 'w0rp/ale' " Erorr highlighting / linting while editing
+Plug 'w0rp/ale' " Erorr highlighting / linting while editing
+Plug 'vimwiki/vimwiki' " Vim wiki
 call plug#end()
 
 "Some basic utilities
@@ -69,19 +70,20 @@ set nobackup nowritebackup noswapfile
 set exrc
 
 " Keybinds
+let mapleader=" "
 " Add keybinds to jump to errors
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+nmap <silent> <leader>k <Plug>(ale_previous_wrap)
+nmap <silent> <leader>j <Plug>(ale_next_wrap)
 " Fuzzy finder
 nmap <silent> t :FZF<CR>
 " Clear highlighting
 nmap <silent> c :nohl<CR>
 " Display list of buffers
-nmap <silent> s :buffers<CR>:b
+nmap <silent> <leader>s :buffers<CR>:b
 " Switch between the last 2 buffers
 nmap <silent> S :b#<CR>
 " Execute the currently focused command from 'dispatch.vim'
-nmap <silent> Q :Dispatch<CR>
+nmap <silent> <leader>Q :Dispatch<CR>
 
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
@@ -109,3 +111,6 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=black
 autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
+
+" Configure VimWiki
+let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
