@@ -27,7 +27,7 @@ __set_prompt() {
 
     set_bash_prompt() {
         EXIT_STATUS=$? #Get the result of the previous command to color the lambda
-        
+
         hash git 2>/dev/null || return # git not found
         local git_eng="env LANG=C git"   # force git output in English to make our work easier
 
@@ -56,7 +56,7 @@ __set_prompt() {
                 marks="${marks}${SYMBOL_GIT_STASHED}"
             fi
 
-            if [[ -n "$marks" ]]; then 
+            if [[ -n "$marks" ]]; then
                 marks="[$marks]"
             fi
 
@@ -80,18 +80,18 @@ __set_prompt() {
             DIRECTORY_PREFIX=" in "
         fi
         #If root, the username should be in red
-        if [ "$EUID" -eq 0 ]; then 
+        if [ "$EUID" -eq 0 ]; then
             USER="$RED\u$RESET"
             DIRECTORY_PREFIX=" in "
         fi
         #If the previous command failed, the lambda should be red
-        if [ $EXIT_STATUS == 0 ]; then 
+        if [ $EXIT_STATUS == 0 ]; then
             PROMPT="$LGREEN$PROMPT"
         else
             PROMPT="$RED$PROMPT"
         fi
         #($user (at $host)? in)? $directory
-        #$prompt 
+        #$prompt
         DIRECTORY="$DIRECTORY_PREFIX$DIRECTORY"
         PS1="\n$USER$HOST$DIRECTORY$GIT\n$PROMPT "
     }
@@ -102,12 +102,7 @@ set_title() {
     echo -en "\033]0;${1}\a"
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+export VIMINIT='let $MYVIMRC="~/.config/dotfiles/vim/vimrc" | source $MYVIMRC'
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
