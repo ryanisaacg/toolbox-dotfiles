@@ -74,6 +74,10 @@ let mapleader=" "
 " Add keybinds to jump to errors
 nmap <silent> <leader>k <Plug>(ale_previous_wrap)
 nmap <silent> <leader>j <Plug>(ale_next_wrap)
+" Add keybinds for using common ALE operations
+nmap <silent> K :ALEHover<CR>
+nmap <silent> gd :ALEGoToDefinition<CR>
+nmap <silent> <leader>fr :ALEFindReferences<CR>
 " Fuzzy finder
 nmap <silent> t :FZF<CR>
 " Clear highlighting
@@ -84,6 +88,9 @@ nmap <silent> <leader>s :buffers<CR>:b
 nmap <silent> S :b#<CR>
 " Execute the currently focused command from 'dispatch.vim'
 nmap <silent> <leader>Q :Dispatch<CR>
+" Create splits using easy keybindings
+nmap <silent> <leader>- :split<CR>
+nmap <silent> <leader>\| :vsplit<CR>
 
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
@@ -120,4 +127,4 @@ autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=black
 autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Configure VimWiki
-let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md' }]
+let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md-wiki' }]
