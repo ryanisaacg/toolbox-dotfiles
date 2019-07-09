@@ -14,7 +14,8 @@ Plug 'tpope/vim-fugitive' " Git wrapper for Vim
 Plug 'tpope/vim-dispatch' " Background tasks for Vim
 Plug 'tpope/vim-sensible' " Some nice defaults for Vim
 Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
-Plug 'cohama/lexima.vim' " Paren matching for vim
+" Disabled for now because it plays badly with vimwiki
+" Plug 'cohama/lexima.vim' " Paren matching for vim
 Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'christoomey/vim-tmux-navigator' " Vim + Tmux integration
 Plug 'w0rp/ale' " Erorr highlighting / linting while editing
@@ -127,4 +128,4 @@ autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=black
 autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Configure VimWiki
-let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md-wiki' }]
+let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.txt' }]
