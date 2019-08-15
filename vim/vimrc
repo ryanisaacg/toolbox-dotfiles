@@ -73,8 +73,13 @@ set exrc
 " Keybinds
 let mapleader=" "
 " Add keybinds to jump to errors
-nmap <silent> <leader>k <Plug>(ale_previous_wrap)
-nmap <silent> <leader>j <Plug>(ale_next_wrap)
+nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
+nmap <silent> <leader>aj <Plug>(ale_next_wrap)
+" Add keybinds for split navigation
+nmap <silent> <leader>h <C-w>h
+nmap <silent> <leader>j <C-w>j
+nmap <silent> <leader>k <C-w>k
+nmap <silent> <leader>l <C-w>l
 " Add keybinds for using common ALE operations
 nmap <silent> K :ALEHover<CR>
 nmap <silent> gd :ALEGoToDefinition<CR>
