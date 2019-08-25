@@ -3,11 +3,18 @@
 	name = Ryan Goldstein
 	email = ryanisaacg@gmail.com
 [alias]
-    ff = merge --ff-only
-    down = !git fetch --prune && git ff
-    up = push
+    ff=merge --ff-only
+    pull=pull --ff-only
+
+    st=status
+    sl=smartlog
+    hs=history
+
+    smartlog=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit master..HEAD
+    history=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     staged = diff --cached
     tags = tag -l
+    local-branches = branch -l
     branches = branch -a
     remotes = remote -v
     stashes = stash list
