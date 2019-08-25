@@ -9,7 +9,10 @@
     st=status
     sl=smartlog
     hs=history
+    cm=commit --verbose --all
 
+
+    amend=commit --amend --verbose --all
     smartlog=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit master..HEAD
     history=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     staged = diff --cached
