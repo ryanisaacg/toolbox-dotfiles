@@ -3,3 +3,4 @@ set PATH ~/.config/dotfiles/bin $PATH
 set -x FZF_DEFAULT_COMMAND "rg -l ."
 set -x EDITOR vim
 set -x VIMINIT 'let $MYVIMRC="~/.config/dotfiles/vim/vimrc" | source $MYVIMRC'
+stty start undef stop undef
