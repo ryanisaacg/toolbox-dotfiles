@@ -24,3 +24,5 @@
 	excludesfile = ~/.config/dotfiles/git/.gitignore_global
 [merge]
 	defaultToUpstream = true
+[credential]
+	helper = store
