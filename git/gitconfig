@@ -11,13 +11,12 @@
     hs=history
     cm=commit --verbose --all
 
-
     amend=commit --amend --verbose --all
     smartlog=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit master..HEAD
     history=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
     staged = diff --cached
     tags = tag -l
-    local-branches = branch -l
+    active= branch -l
     branches = branch -a
     remotes = remote -v
     stashes = stash list
