@@ -45,5 +45,5 @@ function fish_prompt
     # Line 2
     echo
     [ $last_status -eq 0 ]; and set col $fish_color_success; or set col $fish_color_failure
-    prompt_section $col '❯ '
+    prompt_section $col 'λ '
 end
