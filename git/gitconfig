@@ -3,9 +3,8 @@
 	name = Ryan Goldstein
 	email = ryanisaacg@gmail.com
 [alias]
-    pull=pull --ff-only --prune
-    commit=commit --verbose
-
+    pl=pull --ff-only --prune
+    pu=push
     ac=!git active
     st=status
     sl=!git smartlog
