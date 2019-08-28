@@ -3,14 +3,17 @@
 	name = Ryan Goldstein
 	email = ryanisaacg@gmail.com
 [alias]
-    ff=merge --ff-only
-    pull=pull --ff-only
+    pull=pull --ff-only --prune
+    commit=commit --verbose
 
+    ac=!git active
     st=status
-    sl=smartlog
-    hs=history
+    sl=!git smartlog
+    sw=checkout
+    hs=!git history
     cm=commit --verbose --all
 
+    ff=merge --ff-only
     amend=commit --amend --verbose --all
     smartlog=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit master..HEAD
     history=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
