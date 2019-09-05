@@ -10,7 +10,8 @@
     sl=!git smartlog
     sw=checkout
     hs=!git history
-    cm=commit --verbose --all
+    cm=commit --verbose
+    ca=commit --verbose --all
 
     ff=merge --ff-only
     amend=commit --amend --verbose --all
