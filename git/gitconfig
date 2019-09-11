@@ -1,7 +1,7 @@
 # This is Git's per-user configuration file.
 [user]
 	name = Ryan Goldstein
-	email = ryanisaacg@gmail.com
+	email = ryan@ryanisaacg.com
 [alias]
     pl=pull --ff-only --prune
     pu=push
