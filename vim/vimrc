@@ -97,6 +97,9 @@ nmap <silent> <leader>Q :Dispatch<CR>
 " Create splits using easy keybindings
 nmap <silent> <leader>- :split<CR>
 nmap <silent> <leader>\| :vsplit<CR>
+" Add keybinds for opening a link into split
+nmap <silent> <leader>w- <Plug>VimwikiSplitLink
+nmap <silent> <leader>w\| <Plug>VimwikiVSplitLink
 
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
