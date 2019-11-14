@@ -80,6 +80,9 @@ nmap <silent> <leader>h <C-w>h
 nmap <silent> <leader>j <C-w>j
 nmap <silent> <leader>k <C-w>k
 nmap <silent> <leader>l <C-w>l
+" Add bindings for autolab
+nmap <silent> <leader>as :!async %<CR>
+nmap <silent> <leader>ar :!ares<CR>
 " Add keybinds for using common ALE operations
 nmap <silent> K :ALEHover<CR>
 nmap <silent> gd :ALEGoToDefinition<CR>
