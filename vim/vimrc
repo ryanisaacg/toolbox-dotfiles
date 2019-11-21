@@ -64,9 +64,6 @@ noremap  <buffer> <silent> <End> g$
 "Disable backups completely
 set nobackup nowritebackup noswapfile
 
-"Allow each project to set its own vimrc
-set exrc
-
 " Keybinds
 let mapleader=" "
 " Add keybinds to jump to errors
