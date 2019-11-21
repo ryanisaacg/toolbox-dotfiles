@@ -1,6 +1,4 @@
 set runtimepath=~/.config/dotfiles/vim,$VIM,$VIMRUNTIME
-let g:rust_fold=1
-let g:vimwiki_folding='expr:quick'
 "Plugins
 "Install the plugin manager
 if empty(glob("~/.config/dotfiles/vim/autoload/plug.vim"))
@@ -145,6 +143,3 @@ autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 " Configure VimWiki
 let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.txt' }]
 
-" Configure fold levels
-set foldmethod=syntax
-set foldlevelstart=20
