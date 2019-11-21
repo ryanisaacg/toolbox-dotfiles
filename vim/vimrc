@@ -84,11 +84,11 @@ nmap <silent> <leader>fr :ALEFindReferences<CR>
 " Fuzzy finder
 nmap <silent> t :FZF<CR>
 " Clear highlighting
-nmap <silent> c :nohl<CR>
+nmap <silent> <leader>c :nohl<CR>
 " Display list of buffers
 nmap <silent> <leader>s :buffers<CR>:b
 " Switch between the last 2 buffers
-nmap <silent> S :b#<CR>
+nmap <silent> <leader>S :b#<CR>
 " Execute the currently focused command from 'dispatch.vim'
 nmap <silent> <leader>Q :Dispatch<CR>
 " Create splits using easy keybindings
