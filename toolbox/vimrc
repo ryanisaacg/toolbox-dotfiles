@@ -1,23 +1,23 @@
-set runtimepath=~/.config/dotfiles/vim,$VIM,$VIMRUNTIME
 "Plugins
 "Install the plugin manager
-if empty(glob("~/.config/dotfiles/vim/autoload/plug.vim"))
-  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-"Install the plugins
-call plug#begin('~/.config/dotfiles/vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
-Plug 'airblade/vim-gitgutter' " Show git diff lines
-Plug 'tpope/vim-rsi' " Add the readline keys to Github
-Plug 'tpope/vim-fugitive' " Git wrapper for Vim
-Plug 'tpope/vim-dispatch' " Background tasks for Vim
-Plug 'tpope/vim-sensible' " Some nice defaults for Vim
-Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
-Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
-Plug 'w0rp/ale' " Erorr highlighting / linting while editing
-Plug 'vimwiki/vimwiki' " Vim wiki
-call plug#end()
+" if empty(glob("~/.config/dotfiles/vim/autoload/plug.vim"))
+"   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
+" "Install the plugins
+" call plug#begin('~/.config/dotfiles/vim/plugged')
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
+" Plug 'airblade/vim-gitgutter' " Show git diff lines
+" Plug 'tpope/vim-rsi' " Add the readline keys to Github
+" Plug 'tpope/vim-fugitive' " Git wrapper for Vim
+" Plug 'tpope/vim-dispatch' " Background tasks for Vim
+" Plug 'tpope/vim-sensible' " Some nice defaults for Vim
+" Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
+" Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
+" Plug 'w0rp/ale' " Erorr highlighting / linting while editing
+" Plug 'vimwiki/vimwiki' " Vim wiki
+" Plug 'junegunn/goyo.vim'
+" call plug#end()
 
 "Some basic utilities
 set bg=dark
