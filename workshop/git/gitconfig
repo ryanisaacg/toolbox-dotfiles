@@ -23,13 +23,8 @@
     branches = branch -a
     remotes = remote -v
     stashes = stash list
-    whoami = !echo 'default'
-[includeIf "gitdir:lcsr/"]
-    path = ~/.config/dotfiles/git/lcsr-cfg
-[includeIf "gitdir:Autolab/"]
-    path = ~/.config/dotfiles/git/lcsr-cfg
 [core]
-	excludesfile = ~/.config/dotfiles/git/.gitignore_global
+	excludesfile = ~/.config/dotfiles/workshop/.gitignore_global
 [merge]
 	defaultToUpstream = true
 [credential]
