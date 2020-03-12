@@ -1,4 +1,0 @@
-[user]
-    email = rig24@rutgers.edu
-[alias]
-    whoami=!echo 'lcsr'
