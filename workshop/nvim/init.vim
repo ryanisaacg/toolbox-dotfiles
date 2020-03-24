@@ -66,6 +66,8 @@ set nobackup nowritebackup noswapfile
 
 " Keybinds
 let mapleader=" "
+" Load this config file
+nmap <silent> <leader>r :so %<CR>
 " Add keybinds to jump to errors
 nmap <silent> <leader>ak <Plug>(ale_previous_wrap)
 nmap <silent> <leader>aj <Plug>(ale_next_wrap)
