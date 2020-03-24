@@ -101,7 +101,8 @@ nmap <silent> <leader>\| :vsplit<CR>
 nmap <silent> <leader>w- <Plug>VimwikiSplitLink
 nmap <silent> <leader>w\| <Plug>VimwikiVSplitLink
 nmap <silent> <leader>wc :VimwikiTOC<CR>
-
+nmap <silent> <leader><CR> :call NormalizeLocalLink(0)<CR>
+vmap <silent> <leader><CR> :<C-U>call NormalizeLocalLink(1)<CR>
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
 set guicursor=
@@ -116,6 +117,11 @@ function! StripTrailingWhitespace()
 endfunction
 command! StripTrailing :call StripTrailingWhitespace()
 au BufWritePre <buffer> :call StripTrailingWhitespace()
+
+function! NormalizeLocalLink(visual)
+    call vimwiki#base#normalize_link(a:visual)
+    execute "normal! /]\<cr>wi#\<esc>"
+endfunction
 
 " Don't highlight POSIX sh features as errors
 let g:is_posix=1
