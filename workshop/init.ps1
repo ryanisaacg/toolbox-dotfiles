@@ -11,4 +11,6 @@ function Link {
     new-item -itemtype symboliclink -path $path -name $name -value $value
 }
 
-Set-Alias -Name g -Value git
+Set-Alias g git
+Set-Alias which get-command
+Set-Alias e nvim-qt
