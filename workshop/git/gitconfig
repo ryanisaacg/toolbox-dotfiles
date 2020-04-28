@@ -25,6 +25,7 @@
     stashes = stash list
 [core]
 	excludesfile = ~/.config/dotfiles/workshop/.gitignore_global
+	autocrlf = true
 [merge]
 	defaultToUpstream = true
 [credential]
