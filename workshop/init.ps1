@@ -14,3 +14,5 @@ function Link {
 Set-Alias g git
 Set-Alias which get-command
 Set-Alias e nvim-qt
+
+Invoke-Expression (&starship init powershell)
