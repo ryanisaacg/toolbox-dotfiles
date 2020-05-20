@@ -76,13 +76,10 @@ nmap <silent> <leader>h <C-w>h
 nmap <silent> <leader>j <C-w>j
 nmap <silent> <leader>k <C-w>k
 nmap <silent> <leader>l <C-w>l
-" Add bindings for autolab
-nmap <silent> <leader>as :!acp %<CR>
-nmap <silent> <leader>ar :!ares<CR>
 " Add keybinds for using common ALE operations
-nmap <silent> K :ALEHover<CR>
-nmap <silent> gd :ALEGoToDefinition<CR>
-nmap <silent> <leader>fr :ALEFindReferences<CR>
+nmap <silent> <leader>ah :ALEHover<CR>
+nmap <silent> <leader>ad :ALEGoToDefinition<CR>
+nmap <silent> <leader>ar :ALEFindReferences<CR>
 " Fuzzy finder
 nmap <silent> t :FZF<CR>
 " Clear highlighting
