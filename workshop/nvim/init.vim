@@ -106,7 +106,7 @@ nmap <silent> <leader><CR> :call NormalizeLocalLink(0)<CR>
 vmap <silent> <leader><CR> :<C-U>call NormalizeLocalLink(1)<CR>
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
-set guicursor=
+"set guicursor=
 
 " Custom commands
 " Strip tailing whitespace from files
