@@ -13,6 +13,7 @@
     ca=commit --verbose --all
     co=checkout
 
+    co-pr = !sh -c 'git fetch origin pull/$1/head:pr/$1 && git checkout pr/$1' -
     ff=merge --ff-only
     amend=commit --amend --verbose --all
     smartlog=log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit master..HEAD
