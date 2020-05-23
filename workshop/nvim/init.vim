@@ -16,7 +16,8 @@ Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, 
 Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 Plug 'vimwiki/vimwiki' " Vim wiki
-Plug 'junegunn/goyo.vim'
+Plug 'junegunn/goyo.vim' " Distraction free writing
+Plug 'joshdick/onedark.vim' " Color scheme
 call plug#end()
 
 "Some basic utilities
@@ -102,7 +103,7 @@ nmap <silent> <leader><CR> :call NormalizeLocalLink(0)<CR>
 vmap <silent> <leader><CR> :<C-U>call NormalizeLocalLink(1)<CR>
 " Configure the statusline
 set statusline=%#StatusLine#%f%m%r%h%w%=\ [%Y]\ [%{&ff}]\ [line:\ %0l,\ column:\ %0v]\ [%p%%]
-set guicursor=
+"set guicursor=
 
 " Custom commands
 " Strip tailing whitespace from files
@@ -114,10 +115,15 @@ function! StripTrailingWhitespace()
 endfunction
 command! StripTrailing :call StripTrailingWhitespace()
 au BufWritePre <buffer> :call StripTrailingWhitespace()
-
+" Create a local link in vimwiki
 function! NormalizeLocalLink(visual)
     call vimwiki#base#normalize_link(a:visual)
     execute "normal! /]\<cr>wi#\<esc>"
+endfunction
+" Set the GUI title of nvim
+function! SetTitle(title)
+    set title
+    let &titlestring=a:title
 endfunction
 
 " Don't highlight POSIX sh features as errors
@@ -127,13 +133,24 @@ let g:is_posix=1
 command! Persist :set t_ti= t_te=
 
 " Configure syntax highlighting
+function InitGui()
+    if exists('g:GuiLoaded')
+        "call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Highligh error as red, underlined.
+        "call s:h("ALEWarning", { "gui": "underline", "cterm": "underline"})  " Underline for warning.
+        "call s:h("ALEInfo", { "gui": "underline", "cterm": "underline"}) " Underline for info tips.
+        let g:onedark_terminal_italics=1
+        let g:onedark_hide_endofbuffer=1
+        colorscheme onedark
+    endif
+endfunction
+autocmd UIEnter * call InitGui()
 " Enable italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
 " Highlight trailing whitespace
-highlight ExtraWhitespace ctermbg=red guibg=red
+highlight ExtraWhitespace ctermbg=red guibg=Red
 match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=black
+autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=None
 autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Configure VimWiki
