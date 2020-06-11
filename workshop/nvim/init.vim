@@ -143,7 +143,9 @@ function InitGui()
         colorscheme onedark
     endif
 endfunction
-autocmd UIEnter * call InitGui()
+if has('nvim-0.4')
+    autocmd UIEnter * call InitGui()
+endif
 " Enable italics
 let &t_ZH="\e[3m"
 let &t_ZR="\e[23m"
