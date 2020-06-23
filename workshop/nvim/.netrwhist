@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/root/.config/dotfiles/fish/functions'
-let g:netrw_dirhist_2='/root/lcsr/Autolab/templates'
-let g:netrw_dirhist_3='/root/lcsr/Autolab/lib'
-let g:netrw_dirhist_4='/.freespace/srv/autolab/autolab-oneclick/server/Autolab'
-let g:netrw_dirhist_5='/.freespace/srv/autolab/autolab-oneclick/server/Autolab/config'
-let g:netrw_dirhist_6='/.freespace/srv/autolab/autolab-oneclick/server/log'
-let g:netrw_dirhist_7='/root/.config/dotfiles/bin'
