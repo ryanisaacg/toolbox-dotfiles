@@ -137,7 +137,7 @@ let g:is_posix=1
 command! Persist :set t_ti= t_te=
 
 " Configure syntax highlighting
-function InitGui()
+function! InitGui()
     if exists('g:GuiLoaded')
         "call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Highligh error as red, underlined.
         "call s:h("ALEWarning", { "gui": "underline", "cterm": "underline"})  " Underline for warning.
