@@ -16,3 +16,5 @@ Set-Alias which get-command
 Set-Alias e nvim-qt
 
 Invoke-Expression (&starship init powershell)
+
+$env:FZF_DEFAULT_COMMMAND = 'rg --files'
