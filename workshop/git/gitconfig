@@ -27,6 +27,7 @@
 [core]
 	excludesfile = ~/.config/dotfiles/workshop/.gitignore_global
 	autocrlf = true
+	eol = lf
 [merge]
 	defaultToUpstream = true
 [credential]
