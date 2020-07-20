@@ -20,6 +20,10 @@ Plug 'junegunn/goyo.vim' " Distraction free writing
 Plug 'joshdick/onedark.vim' " Color scheme
 call plug#end()
 
+" Important for lua quality-of-life
+lua util = require('util')
+command! -nargs=1 Unload :lua util.unload(<q-args>)<CR>
+
 "Some basic utilities
 set bg=dark
 set number "Line numbers
@@ -157,4 +161,6 @@ autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Configure VimWiki
 let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.txt' }]
-
+lua wiki = require('wiki')
+command! Today :lua wiki.genToday()<CR>
+command! Days :lua wiki.genDays()<CR>
