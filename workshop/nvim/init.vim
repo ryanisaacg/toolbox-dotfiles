@@ -164,3 +164,4 @@ let g:vimwiki_list = [{ 'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.txt'
 lua wiki = require('wiki')
 command! Today :lua wiki.genToday()<CR>
 command! Days :lua wiki.genDays()<CR>
+command! Checkify :lua wiki.checkify()<CR>
