@@ -1,19 +1,28 @@
+local m = {}
 local api = vim.api
 
-local function keys(command)
-    return api.nvim_feedkeys(command, 'm', false)
+function m.keys(command)
+    return api.nvim_feedkeys(util.termcode(command), 'm', false)
 end
 
-local function termcode(string)
+function m.termcode(string)
     return api.nvim_replace_termcodes(string, true, true, true)
 end
 
-local function unload(pkg)
+function m.unload(pkg)
     package.loaded[pkg] = nil
 end
 
-return {
-    keys = keys,
-    termcode = termcode,
-    unload = unload,
-}
+function m.starts_with(str, start)
+   return str:sub(1, #start) == start
+end
+
+function m.ends_with(str, ending)
+   return ending == "" or str:sub(-#ending) == ending
+end
+
+function m.trim(s)
+   return (s:gsub("^%s*(.-)%s*$", "%1"))
+end
+
+return m
