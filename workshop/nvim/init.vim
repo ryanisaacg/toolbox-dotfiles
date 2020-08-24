@@ -155,7 +155,7 @@ let &t_ZR="\e[23m"
 " Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=Red
 match ExtraWhitespace /\s\+$/
-autocmd InsertEnter * highlight ExtraWhitespace ctermbg=black guibg=None
+autocmd InsertEnter * highlight clear ExtraWhitespace
 autocmd InsertLeave * highlight ExtraWhitespace ctermbg=red guibg=red
 
 " Configure VimWiki
