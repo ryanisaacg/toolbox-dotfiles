@@ -18,6 +18,7 @@ Plug 'vimwiki/vimwiki' " Vim wiki
 Plug 'junegunn/goyo.vim' " Distraction free writing
 " Plug 'joshdick/onedark.vim' " Color scheme
 Plug 'altercation/vim-colors-solarized'
+Plug 'MattesGroeger/vim-bookmarks' " Vim Bookmarks
 call plug#end()
 
 " Important for lua quality-of-life
