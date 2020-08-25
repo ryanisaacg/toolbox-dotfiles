@@ -16,7 +16,8 @@ Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 Plug 'vimwiki/vimwiki' " Vim wiki
 Plug 'junegunn/goyo.vim' " Distraction free writing
-Plug 'joshdick/onedark.vim' " Color scheme
+" Plug 'joshdick/onedark.vim' " Color scheme
+Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " Important for lua quality-of-life
@@ -24,7 +25,7 @@ lua util = require('util')
 command! -nargs=1 Unload :lua util.unload(<q-args>)<CR>
 
 "Some basic utilities
-set bg=dark
+set bg=light
 set number "Line numbers
 set clipboard^=unnamed "Use the system clipboard
 set mouse=a "Read mouse events
@@ -36,6 +37,8 @@ set showcmd
 set autoread "Reload files automatically when they're changed outside vim
 set splitbelow "Open a split below the current split
 set splitright "Open a split to the right of the current split
+
+colorscheme solarized
 
 " Use ripgrep for the :grep command
 set grepprg=rg\ --vimgrep\ --no-heading\ --smart-case
