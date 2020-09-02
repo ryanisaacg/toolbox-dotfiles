@@ -168,3 +168,4 @@ lua wiki = require('wiki')
 command! Today :lua wiki.genToday()<CR>
 command! Days :lua wiki.genDays()<CR>
 command! Checkify :lua wiki.checkify()<CR>
+hi VimwikiLink cterm=underline ctermfg=DarkBlue
