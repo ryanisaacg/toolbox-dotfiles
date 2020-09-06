@@ -15,7 +15,7 @@ Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 Plug 'vimwiki/vimwiki' " Vim wiki
 Plug 'junegunn/goyo.vim' " Distraction free writing
-Plug 'altercation/vim-colors-solarized'
+Plug 'ryanisaacg/vim-colors-solarized'
 Plug 'MattesGroeger/vim-bookmarks' " Vim Bookmarks
 call plug#end()
 
@@ -143,9 +143,21 @@ function! InitGui()
         "call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Highligh error as red, underlined.
         "call s:h("ALEWarning", { "gui": "underline", "cterm": "underline"})  " Underline for warning.
         "call s:h("ALEInfo", { "gui": "underline", "cterm": "underline"}) " Underline for info tips.
-        let g:onedark_terminal_italics=1
-        let g:onedark_hide_endofbuffer=1
-        colorscheme onedark
+        colorscheme solarized
+        let g:fzf_colors =
+        \ { 'fg':      ['fg', 'Normal'],
+          \ 'bg':      ['bg', 'Normal'],
+          \ 'hl':      ['fg', 'Comment'],
+          \ 'fg+':     ['fg', 'Comment'],
+          \ 'bg+':     ['bg', 'Comment'],
+          \ 'hl+':     ['fg', 'Normal'],
+          \ 'info':    ['fg', 'Normal'],
+          \ 'border':  ['fg', 'Ignore'],
+          \ 'prompt':  ['fg', 'Normal'],
+          \ 'pointer': ['fg', 'Exception'],
+          \ 'marker':  ['fg', 'Keyword'],
+          \ 'spinner': ['fg', 'Label'],
+          \ 'header':  ['fg', 'Comment'] }
     endif
 endfunction
 if has('nvim-0.4')
