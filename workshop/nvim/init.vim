@@ -158,6 +158,7 @@ function! InitGui()
           \ 'marker':  ['fg', 'Keyword'],
           \ 'spinner': ['fg', 'Label'],
           \ 'header':  ['fg', 'Comment'] }
+        hi VimwikiLink cterm=underline ctermfg=DarkBlue gui=underline guifg=#2200CC
     endif
 endfunction
 if has('nvim-0.4')
