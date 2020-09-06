@@ -9,14 +9,12 @@ call plug#begin(stdpath('data') . '/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " File fuzzy finding
 Plug 'airblade/vim-gitgutter' " Show git diff lines
 Plug 'tpope/vim-rsi' " Add the readline keys to Github
-Plug 'tpope/vim-fugitive' " Git wrapper for Vim
 Plug 'tpope/vim-sensible' " Some nice defaults for Vim
 Plug 'tpope/vim-eunuch' " Some nice unix stuff for Vim (rename file and buffer, sudo edit)
 Plug 'sheerun/vim-polyglot' " Add a bunch of language support plugins on demand
 Plug 'w0rp/ale' " Erorr highlighting / linting while editing
 Plug 'vimwiki/vimwiki' " Vim wiki
 Plug 'junegunn/goyo.vim' " Distraction free writing
-" Plug 'joshdick/onedark.vim' " Color scheme
 Plug 'altercation/vim-colors-solarized'
 Plug 'MattesGroeger/vim-bookmarks' " Vim Bookmarks
 call plug#end()
@@ -168,4 +166,5 @@ lua wiki = require('wiki')
 command! Today :lua wiki.genToday()<CR>
 command! Days :lua wiki.genDays()<CR>
 command! Checkify :lua wiki.checkify()<CR>
-nmap <silent> <leader>wg :VimwikiGoto 
+nmap <silent> <leader>wg :VimwikiGoto
+hi VimwikiLink cterm=underline ctermfg=DarkBlue
