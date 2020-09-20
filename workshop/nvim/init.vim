@@ -146,8 +146,7 @@ function! InitGui()
         "call s:h("ALEError", { "fg": s:red, "gui": "underline", "cterm": "underline" }) " Highligh error as red, underlined.
         "call s:h("ALEWarning", { "gui": "underline", "cterm": "underline"})  " Underline for warning.
         "call s:h("ALEInfo", { "gui": "underline", "cterm": "underline"}) " Underline for info tips.
-        colorscheme gruvbox
-        hi VimwikiLink cterm=underline ctermfg=DarkBlue gui=underline guifg=#2200CC
+        "colorscheme gruvbox
     endif
 endfunction
 if has('nvim-0.4')
@@ -169,4 +168,4 @@ command! Today :lua wiki.genToday()<CR>
 command! Days :lua wiki.genDays()<CR>
 command! Checkify :lua wiki.checkify()<CR>
 nmap <silent> <leader>wg :VimwikiGoto
-hi VimwikiLink cterm=underline ctermfg=DarkBlue
+hi VimwikiLink cterm=underline ctermfg=DarkBlue gui=underline guifg=#458588
